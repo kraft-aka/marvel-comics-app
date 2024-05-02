@@ -58,7 +58,29 @@ const Search = () => {
     setComicsData(null);
   };
 
-  const getComicsData = () => {};
+  // gets comics data
+  const getComicsData = async (characterId) => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+
+    const timeStamp = new Date().getTime();
+    const hash = generateHash(timeStamp);
+
+    const url = `https://gateway.marvel.com:443/v1/public/characters/${characterId}/comics?apikey=${publicKey}&hash=${hash}&ts=${timeStamp}`;
+    try {
+      setIsLoading(true);
+      const response = await fetch(url);
+      const data = await response.json();
+      setComicsData(data?.data?.results);
+      setIsLoading(false);
+      console.log(data?.data?.results);
+    } catch (err) {
+      console.log("Error occured fetchnig comics data: ", err);
+      setIsLoading(false);
+    }
+  };
 
   return (
     <main className="search-container">
@@ -81,8 +103,10 @@ const Search = () => {
       {!isLoading ? (
         <section>
           <p>{characterName}</p>
-          {characterData && <Characters data={characterData} />}
-          {comicsData && <Comics />}
+          {characterData && (
+            <Characters data={characterData} handleClick={getComicsData} />
+          )}
+          {comicsData && <Comics data={comicsData} />}
         </section>
       ) : (
         <h1>Loading...</h1>

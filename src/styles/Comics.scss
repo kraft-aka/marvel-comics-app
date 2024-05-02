@@ -1,0 +1,7 @@
+.comics-container {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  width: 800px;
+  margin: 1rem auto;
+  gap: 1rem;
+}
