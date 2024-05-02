@@ -1,0 +1,22 @@
+.character-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 800px;
+  margin: 1rem auto;
+
+  .character-card {
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0.2rem 0.2rem #000;
+    filter: grayscale(1);
+    transition: all 0.4s ease-in-out;
+  }
+  .character-card:hover {
+    cursor: pointer;
+    filter: grayscale(0);
+  }
+}
