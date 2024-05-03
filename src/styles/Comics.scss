@@ -4,4 +4,14 @@
   width: 800px;
   margin: 1rem auto;
   gap: 1rem;
+
+  .comics-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 3px solid;
+    height: 350px;
+    width: auto;
+    box-shadow: 5px 5px #111;
+  }
 }
