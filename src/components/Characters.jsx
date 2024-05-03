@@ -10,7 +10,7 @@ const Characters = ({ data, handleClick }) => {
           className="character-card"
           style={{
             backgroundImage: `url(${character?.thumbnail.path}.${character?.thumbnail.extension})`,
-            backgroundPosition: "canter",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "250px",
@@ -19,7 +19,7 @@ const Characters = ({ data, handleClick }) => {
           
         >
           <h2>{character.name}</h2>
-          <p>{character?.description}</p>
+          <p>{character?.description.slice(0,25)}</p>
           <button onClick={() => handleClick(character.id)}>
             Learn More...
           </button>

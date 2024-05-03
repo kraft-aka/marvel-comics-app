@@ -16,19 +16,19 @@ const Search = () => {
 
   const submitSearch = (e) => {
     e.preventDefault();
-
+    setCharacterName("");
+    setCharacterData(null);
     const timeStamp = new Date().getTime();
     const hash = generateHash(timeStamp);
 
     setTimeout(
       () =>
         fetchData(
-          `${baseUrl}characters?apikey=${publicKey}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${characterName}&limit=100`
+          `${baseUrl}characters?apikey=${publicKey}&hash=${hash}&ts=${timeStamp}&nameStartsWith=${characterName}` //&limit=100
         ),
       2000
     );
 
-    setCharacterName("");
   };
 
   const generateHash = (t) => {
@@ -103,7 +103,7 @@ const Search = () => {
       {!isLoading ? (
         <section>
           <p>{characterName}</p>
-          {characterData && (
+          {!comicsData && characterData && (
             <Characters data={characterData} handleClick={getComicsData} />
           )}
           {comicsData && <Comics data={comicsData} />}
