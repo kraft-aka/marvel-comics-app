@@ -6,12 +6,38 @@
   gap: 1rem;
 
   .comics-card {
+    height: 300px;
+    width: auto;
+    border: 2px solid;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0.2rem 0.2rem #000;
+    filter: grayscale(1);
+    transition: all 0.4s ease-in-out;
     padding: 1rem;
-    border: 3px solid;
-    height: 350px;
-    width: auto;
-    box-shadow: 5px 5px #111;
+    text-align: center;
+
+
+    &:hover {
+      filter: grayscale(0);
+    }
+
+    .comics-detail {
+
+
+      .comics-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        text-decoration: none;
+        background-color: #f3f3f3;
+        padding: 1rem;
+        margin-top: 120%;
+      }
+    }
   }
+
 }

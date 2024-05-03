@@ -19,9 +19,7 @@ const Comics = ({ data }) => {
             }}
           >
             <section className="comics-detail">
-              <h4 className="comics-title">{c.title}</h4>
-              <p>{c?.prices[0]?.price}$</p>
-              <a href={detailUrl} target="_blank" rel="noreferrer">
+              <a href={detailUrl} target="_blank" rel="noreferrer" className="comics-link">
                 View Comics Details
               </a>
             </section>

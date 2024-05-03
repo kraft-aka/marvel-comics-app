@@ -18,9 +18,9 @@ const Characters = ({ data, handleClick }) => {
           }}
           
         >
-          <h2>{character.name}</h2>
+          <h2 className="character-name">{character.name}</h2>
           <p>{character?.description.slice(0,25)}</p>
-          <button onClick={() => handleClick(character.id)}>
+          <button onClick={() => handleClick(character.id)} className="character-btn">
             Learn More...
           </button>
         </div>

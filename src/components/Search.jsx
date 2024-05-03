@@ -84,15 +84,17 @@ const Search = () => {
 
   return (
     <main className="search-container">
-      <form onSubmit={submitSearch}>
+      <form onSubmit={submitSearch} className="search-form">
         <input
+          className="input"
           type="text"
           placeholder="enter character name"
           onChange={handleCharcaterName}
           id="characterName"
+          autoComplete="off"
         />
         <div className="search-cta">
-          <button className="btn" type="submit">
+          <button className="btn" type="submit" >
             Search
           </button>
           <button className="btn-reset" type="reset" onClick={handleReset}>
@@ -101,8 +103,7 @@ const Search = () => {
         </div>
       </form>
       {!isLoading ? (
-        <section>
-          <p>{characterName}</p>
+        <section className="display-container">
           {!comicsData && characterData && (
             <Characters data={characterData} handleClick={getComicsData} />
           )}

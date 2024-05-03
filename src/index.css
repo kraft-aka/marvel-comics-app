@@ -15,14 +15,21 @@ body {
   font-family: "Bangers", system-ui, sans-serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 input, button {
   font-family: inherit;
 }
 
-button {
+button, a {
   padding: 1rem 2.5rem;
   border: 2px solid;
   box-shadow: 2px 2px black;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
 }
